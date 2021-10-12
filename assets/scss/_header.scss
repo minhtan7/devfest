@@ -14,7 +14,6 @@
 /*===== Navbar =====*/
 
 .navbar-area {
-    padding: 10px 0;
     position: absolute;
     top: 0;
     left: 0;
@@ -27,7 +26,7 @@
         content: '';
         width: 100%;
         height: 100%;
-        background: linear-gradient(to right, rgba(16, 43, 175, 1) 0%, rgba(22, 100, 255, 1) 100%);
+        background: linear-gradient(to right, rgba(0,90,189,1)  0%, rgba(90,156,255,1)100%);
         top: 0;
         left: 0;
         z-index: -1;
@@ -257,25 +256,25 @@
         &.count-color-1{
             & .count,
             & .text{
-                color: #ee163a;
+                color: $theme-red;
             }
         }
         &.count-color-2{
             & .count,
             & .text{
-                color: #ffc107;
+                color: $theme-yellow;
             }
         }
         &.count-color-3{
             & .count,
             & .text{
-                color: #03a9f4;
+                color: $theme-color;
             }
         }
         &.count-color-4{
             & .count,
             & .text{
-                color: #8bc34a;
+                color: $theme-green;
             }
         }
     }

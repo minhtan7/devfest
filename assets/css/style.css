@@ -118,7 +118,7 @@ p {
   font-size: 16px;
   line-height: 48px;
   border-radius: 50px;
-  color: #1863ff;
+  color: #4285f4;
   cursor: pointer;
   z-index: 5;
   -webkit-transition: all 0.4s ease-out 0s;
@@ -130,14 +130,14 @@ p {
   border: 0; }
   .main-btn:hover {
     background-color: #fff;
-    color: #1863ff;
+    color: #4285f4;
     -webkit-box-shadow: 0px 5px 29px 0px rgba(0, 0, 0, 0.25);
     -moz-box-shadow: 0px 5px 29px 0px rgba(0, 0, 0, 0.25);
     box-shadow: 0px 5px 29px 0px rgba(0, 0, 0, 0.25); }
   .main-btn.main-btn-2 {
-    background: -webkit-linear-gradient(left, #102baf 0%, #1664ff 50%, #102baf 100%);
-    background: -o-linear-gradient(left, #102baf 0%, #1664ff 50%, #102baf 100%);
-    background: linear-gradient(to right, #102baf 0%, #1664ff 50%, #102baf 100%);
+    background: -webkit-linear-gradient(left, rgba(0,90,189,1) 0%, rgba(90,156,255,1) 50%, rgba(0,90,189,1) 100%);
+    background: -o-linear-gradient(left, rgba(0,90,189,1) 0%, rgba(90,156,255,1) 50%, rgba(0,90,189,1) 100%);
+    background: linear-gradient(to right, rgba(0,90,189,1) 0%, rgba(90,156,255,1) 50%, rgba(0,90,189,1) 100%);
     background-size: 200% auto;
     color: #fff;
     background-position: left center;
@@ -224,7 +224,7 @@ p {
       height: 100%;
       border-style: solid;
       /* Spinner Color */
-      border-color: #1863ff #1863ff #e6e6e6;
+      border-color: #4285f4 #4285f4 #e6e6e6;
       border-radius: 50%;
       border-width: 6px; }
     .preloader .loader .ytp-spinner-left .ytp-spinner-circle {
@@ -453,7 +453,6 @@ p {
 
 /*===== Navbar =====*/
 .navbar-area {
-  padding: 10px 0;
   position: absolute;
   top: 0;
   left: 0;
@@ -469,7 +468,7 @@ p {
     content: '';
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, #102baf 0%, #1664ff 100%);
+    background: linear-gradient(to right, rgba(0,90,189,1)  0%, rgba(90,156,255,1)100%);
     top: 0;
     left: 0;
     z-index: -1;
@@ -521,7 +520,7 @@ p {
         top: 116%;
         left: 0;
         width: 100%;
-        background-color: #1863ff;
+        background-color: #4285f4;
         z-index: 8; } }
     @media (max-width: 767px) {
       .navbar-area .navbar .navbar-collapse {
@@ -529,7 +528,7 @@ p {
         top: 116%;
         left: 0;
         width: 100%;
-        background-color: #1863ff;
+        background-color: #4285f4;
         z-index: 8; } }
     .navbar-area .navbar .navbar-nav .nav-item {
       margin: 0 16px;
@@ -587,7 +586,7 @@ p {
         top: 7px; } }
     .navbar-area .navbar .navbar-btn .main-btn:hover {
       background-color: #fff;
-      color: #1863ff; }
+      color: #4285f4; }
 
 /*===== Header =====*/
 .header-content-area {
@@ -651,16 +650,16 @@ p {
         margin-top: 0; } }
   .header-countdown .single-count-content.count-color-1 .count,
   .header-countdown .single-count-content.count-color-1 .text {
-    color: #ee163a; }
+    color: #ea4335; }
   .header-countdown .single-count-content.count-color-2 .count,
   .header-countdown .single-count-content.count-color-2 .text {
-    color: #ffc107; }
+    color: #fbbc04; }
   .header-countdown .single-count-content.count-color-3 .count,
   .header-countdown .single-count-content.count-color-3 .text {
-    color: #03a9f4; }
+    color: rgba(90,156,255,1); }
   .header-countdown .single-count-content.count-color-4 .count,
   .header-countdown .single-count-content.count-color-4 .text {
-    color: #8bc34a; }
+    color: #34a853; }
 
 .header-content {
   margin-top: 60px; }
@@ -705,7 +704,7 @@ p {
   margin-top: 45px; }
   .about-content .date span {
     font-size: 30px;
-    color: #1863ff;
+    color: #4285f4;
     position: relative;
     padding-left: 15px; }
     .about-content .date span::before {
@@ -733,7 +732,7 @@ p {
     margin-top: -50px; }
     .single-counter .counter-icon i {
       font-size: 65px;
-      color: #1863ff;
+      color: #4285f4;
       background-color: #f5f8ff;
       border: 2px solid #e6e6e6;
       width: 100px;
@@ -742,7 +741,7 @@ p {
       border-radius: 50%; }
   .single-counter .counter-content .count {
     font-size: 45px;
-    color: #1863ff;
+    color: #4285f4;
     font-weight: 600;
     margin-top: 5px; }
   .single-counter .counter-content .text {
@@ -961,7 +960,7 @@ p {
     display: inline-block; }
     .single-features .features-icon i {
       font-size: 75px;
-      color: #1863ff;
+      color: #4285f4;
       position: absolute;
       top: 50%;
       left: 50%;
@@ -1090,7 +1089,7 @@ p {
             -o-transition: all 0.3s ease-out 0s;
             transition: all 0.3s ease-out 0s; }
             .single-team .team-content .team-social .social li a:hover {
-              color: #1863ff; }
+              color: #4285f4; }
     .single-team .team-content .team-name a {
       color: #1b273d;
       font-size: 24px;
@@ -1105,7 +1104,7 @@ p {
           font-size: 18px; } }
     .single-team .team-content .sub-title {
       font-size: 16px;
-      color: #1863ff;
+      color: #4285f4;
       -webkit-transition: all 0.3s ease-out 0s;
       -moz-transition: all 0.3s ease-out 0s;
       -ms-transition: all 0.3s ease-out 0s;
@@ -1259,7 +1258,7 @@ p {
   height: 55px;
   line-height: 53px;
   text-align: center;
-  background-color: #1863ff;
+  background-color: #4285f4;
   color: #fff;
   border-radius: 50%; }
 
@@ -1316,7 +1315,7 @@ p {
       color: #777777; }
     .single-form input:focus,
     .single-form textarea:focus {
-      border-color: #1863ff;
+      border-color: #4285f4;
       background-color: #eaf1ff; }
   .single-form textarea {
     padding-top: 15px;
@@ -1404,7 +1403,7 @@ p {
         margin-top: 0; } }
     .footer-subscribe .subscribe-form .main-btn:hover {
       background-color: #f5f8ff;
-      color: #1863ff; }
+      color: #4285f4; }
 
 .widget {
   border-top: 1px solid rgba(255, 255, 255, 0.4);
@@ -1441,7 +1440,7 @@ p {
       height: 50px;
       line-height: 50px;
       border-radius: 50%;
-      background-color: #1863ff;
+      background-color: #4285f4;
       text-align: center;
       color: #fff;
       -webkit-transition: all 0.3s ease-out 0s;
@@ -1450,7 +1449,7 @@ p {
       -o-transition: all 0.3s ease-out 0s;
       transition: all 0.3s ease-out 0s; }
       .footer-contact .social li a:hover {
-        color: #1863ff;
+        color: #4285f4;
         background-color: #fff; }
 
 .footer-copyright {
