@@ -1500,3 +1500,10 @@ p {
   .back-to-top:hover {
     color: #fff;
     background-position: right center; }
+
+
+    /* ADDING */
+    .sign-up-form{
+      text-align: center;
+      margin-top: 5rem;
+    }
