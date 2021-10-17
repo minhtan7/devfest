@@ -1343,7 +1343,7 @@ p {
 ===========================*/
 .footer-area {
   position: relative; }
-  .footer-area::before {
+.footer-area::before {
     position: absolute;
     content: '';
     top: 0;
@@ -1464,15 +1464,7 @@ p {
     font-size: 16px; }
     .copyright .text a {
       color: #fff; }
-.footer-new{
-  background-color: #4285f4;
-  color: white;
-  text-align: center;
-  padding: 0.2rem 0;
-  margin-top: 3rem;
-  display: block;
-  font-style: italic;
-}
+
 
 /*===== BACK TO TOP =====*/
 .back-to-top {
@@ -1503,7 +1495,44 @@ p {
 
 
     /* ADDING */
+    .footer-new{
+      background-color: #4285f4 ;
+      color: white;
+      text-align: center;
+      padding: 0.5rem 0;
+      display: block;
+      font-style: italic;
+      border-top: 1px solid white
+    }
     .sign-up-form{
       text-align: center;
       margin-top: 5rem;
     }
+  #footer-alter{
+    background-color: #4285f4 ;
+    color: white !important;
+    margin-top: 3rem;
+    padding-bottom: 1rem;
+  }
+  #footer-alter p{
+    color: white;
+    font-size: 14px;
+  }
+  #footer-alter a{
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+  }
+  #footer-alter h3{
+    color: white;
+
+  }
+#footer-alter .content{
+  font-style: italic;
+}
+#footer-alter .content span{
+  font-style: normal;
+}
+#footer-alter .col-lg-6.pt-30 p:nth-child(2){
+  font-weight: 500;
+}
