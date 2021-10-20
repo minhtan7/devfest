@@ -1095,7 +1095,7 @@
       <div class="collapse" id="collapseExample">
 
             <div class="sign-up-form">
-                <iframe id="myIframe" src="https://docs.google.com/forms/d/e/1FAIpQLSdyQkfZ_EINCSqCi5DWxp2umkqtrlZz98w2qKJ1Z81HLKpHsw/viewform?embedded=true" width="640" height="1795" frameborder="0" marginheight="0" marginwidth="0"">Loading…</iframe>
+                <iframe id="myIframe" src="https://docs.google.com/forms/d/e/1FAIpQLSdyQkfZ_EINCSqCi5DWxp2umkqtrlZz98w2qKJ1Z81HLKpHsw/viewform?embedded=true" width="640" height="800" frameborder="0" marginheight="0" onscroll="true" marginwidth="0"">Loading…</iframe>
             </div>
 
       </div>
@@ -1163,17 +1163,7 @@
 
     <!--====== Main js ======-->
     <script src="assets/js/main.js"></script>
-    <script>
-        // Selecting the iframe element
-        var iframe = document.getElementById("myIframe");
-        console.log(iframe)
-        // Adjusting the iframe height onload event
-        iframe.onload = function(){
-            console.log("here",iframe.contentWindow.document.body.scrollHeight + 'px')
-
-            iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
-        }
-        </script>
+    
 
 </body>
 
