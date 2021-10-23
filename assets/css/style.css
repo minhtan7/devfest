@@ -1182,6 +1182,25 @@ p {
 /*===========================
        8.PRICING css 
 ===========================*/
+@media (max-width:567px) {
+  #pricing .row .col-sm-5{
+    height: 10rem !important;
+  }
+  #pricing .row .col-sm-5 .single-pricing{
+    border: none;
+  }
+  #pricing .row .col-sm-5 .single-partner{
+    position: unset;
+    width: auto;
+    margin: auto;
+  }
+  #pricing .row .col-sm-5 .single-partner img{
+    height: 100%;
+    
+    position:unset;
+    transform: initial;
+  }
+} 
 .single-pricing {
   border: 1px solid #4285f43b;
   padding: 10px 25px;
