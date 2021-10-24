@@ -751,8 +751,11 @@ p {
     5.EVENT SCHEDULE css 
 ===========================*/
 .event-tab {
-  border: 3px solid rgba(24, 99, 255, 0.1);
-  padding: 40px 70px; }
+  border-top: 3px solid rgba(24, 99, 255, 0.1);
+  padding: 40px 70px; 
+  border-bottom: 3px solid rgba(24, 99, 255, 0.1);
+  padding: 40px 70px; 
+}
   @media only screen and (min-width: 992px) and (max-width: 1200px) {
     .event-tab {
       padding: 40px; } }
