@@ -820,9 +820,9 @@ p {
       content: '';
       width: 100%;
       height: 100%;
-      background: -webkit-linear-gradient(left, #102baf 0%, #1664ff 100%);
-      background: -o-linear-gradient(left, #102baf 0%, #1664ff 100%);
-      background: linear-gradient(to right, #102baf 0%, #1664ff 100%);
+      background: -webkit-linear-gradient(left, rgba(0,90,189,1) 0%, rgba(90,156,255,1) 100%);
+      background: -o-linear-gradient(left, rgba(0,90,189,1) 0%, rgba(90,156,255,1) 100%);
+      background: linear-gradient(to right,  rgba(0,90,189,1) 0%, rgba(90,156,255,1) 100%);
       top: 0;
       left: 0;
       z-index: -1;
@@ -867,9 +867,9 @@ p {
       height: 100%;
       top: 0;
       left: 0;
-      background: -webkit-linear-gradient(left, #102baf 0%, #1664ff 100%);
-      background: -o-linear-gradient(left, #102baf 0%, #1664ff 100%);
-      background: linear-gradient(to right, #102baf 0%, #1664ff 100%);
+      background: -webkit-linear-gradient(left, rgba(0,90,189,1) 0%, rgba(90,156,255,1) 100%);
+      background: -o-linear-gradient(left, rgba(0,90,189,1) 0%, rgba(90,156,255,1) 100%);
+      background: linear-gradient(to right,  rgba(0,90,189,1) 0%, rgba(90,156,255,1) 100%);
       z-index: -1;
       opacity: 0;
       -webkit-transition: all 0.3s ease-out 0s;
@@ -893,12 +893,16 @@ p {
           padding-left: 0;
           margin-top: 15px; } }
       .event-tab .tab-content .event-content .single-event .event-content .event-title {
-        font-size: 24px; }
+        font-size: 14px; 
+        color: #777777;
+      }
         @media (max-width: 767px) {
           .event-tab .tab-content .event-content .single-event .event-content .event-title {
-            font-size: 18px; } }
+            font-size: 10px; 
+            color: #777777;
+          } }
       .event-tab .tab-content .event-content .single-event .event-content .text {
-        margin-top: 20px; }
+        color: black }
       .event-tab .tab-content .event-content .single-event .event-content .event-meta {
         padding-top: 10px; }
         .event-tab .tab-content .event-content .single-event .event-content .event-meta li {
@@ -1498,9 +1502,9 @@ p {
   height: 45px;
   line-height: 45px;
   border-radius: 50%;
-  background: -webkit-linear-gradient(left, #102baf 0%, #1664ff 50%, #102baf 100%);
-  background: -o-linear-gradient(left, #102baf 0%, #1664ff 50%, #102baf 100%);
-  background: linear-gradient(to right, #102baf 0%, #1664ff 50%, #102baf 100%);
+  background: -webkit-linear-gradient(left, rgba(0,90,189,1) 0%, rgba(90,156,255,1) 50%, rgba(0,90,189,1) 100%);
+    background: -o-linear-gradient(left, rgba(0,90,189,1) 0%, rgba(90,156,255,1) 50%, rgba(0,90,189,1) 100%);
+    background: linear-gradient(to right, rgba(0,90,189,1) 0%, rgba(90,156,255,1) 50%, rgba(0,90,189,1) 100%);
   background-size: 200% auto;
   text-align: center;
   z-index: 99;
