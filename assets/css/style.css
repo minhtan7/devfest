@@ -625,7 +625,7 @@ p {
     .header-countdown .single-count-content {
       padding: 0 15px; } }
   .header-countdown .single-count-content .count {
-    font-size: 72px;
+    font-size: 80px;
     font-weight: 600;
     line-height: 60px; }
     @media (max-width: 767px) {
@@ -637,7 +637,7 @@ p {
         font-size: 36px;
         line-height: 40px; } }
   .header-countdown .single-count-content .text {
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 600;
     margin-top: 10px; }
     @media (max-width: 767px) {
@@ -664,7 +664,7 @@ p {
 .header-content {
   margin-top: 60px; }
   .header-content .header-title {
-    font-size: 75px;
+    font-size: 70px;
     color: #fff;
     text-transform: uppercase; }
     @media only screen and (min-width: 992px) and (max-width: 1200px) {
@@ -1613,3 +1613,10 @@ p {
   transition-duration: 0.3s;
   border: none;
 } */
+#sign-up-form .lni-arrow-down{
+  font-weight: bold;
+    font-size: 35px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
