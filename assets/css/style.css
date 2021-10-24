@@ -1598,7 +1598,8 @@ p {
     left: 50%;
     bottom: 20%;
     transform: translateX(-50%);
-    padding: 8px 60px;
+    padding: 15px 80px;
+    font-size: 28px;
 }
 
 #event .tab-content img{
