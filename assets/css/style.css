@@ -913,6 +913,10 @@ p {
           color: black ;
           font-size: 150%;
         }
+        .event-tab .tab-content .event-content .single-event:hover .event-content .text::marker {
+          color: white ;
+          font-size: 150%;
+        }
       .event-tab .tab-content .event-content .single-event .event-content .event-meta {
         padding-top: 10px; }
         .event-tab .tab-content .event-content .single-event .event-content .event-meta li {
