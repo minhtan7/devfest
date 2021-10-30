@@ -753,8 +753,6 @@ p {
 .event-tab {
   border-top: 3px solid rgba(24, 99, 255, 0.1);
   padding: 40px 70px; 
-  border-bottom: 3px solid rgba(24, 99, 255, 0.1);
-  padding: 40px 70px; 
 }
   @media only screen and (min-width: 992px) and (max-width: 1200px) {
     .event-tab {
@@ -1078,9 +1076,9 @@ p {
       height: 100%;
       top: 0;
       left: 0;
-      background: -webkit-linear-gradient(left, #102baf 0%, #1664ff 100%);
-      background: -o-linear-gradient(left, #102baf 0%, #1664ff 100%);
-      background: linear-gradient(to right, #102baf 0%, #1664ff 100%);
+      background: -webkit-linear-gradient(left, rgba(0,90,189,1) 0%, rgba(90,156,255,1) 100%);
+      background: -o-linear-gradient(left, rgba(0,90,189,1) 0%, rgba(90,156,255,1) 100%);
+      background: linear-gradient(to right,  rgba(0,90,189,1) 0%, rgba(90,156,255,1) 100%);
       z-index: -1;
       -webkit-transition: all 0.3s ease-out 0s;
       -moz-transition: all 0.3s ease-out 0s;
