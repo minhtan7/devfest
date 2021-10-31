@@ -1062,7 +1062,9 @@ p {
     transition-duration: 0.3s;
   }  
   .single-team .team-image img {
-    width: 100%; }
+    width: 100%; 
+    border-radius: 10px 10px 0 0 ;
+  }
   .single-team .team-content {
     /* position: absolute;
     bottom: 0;
@@ -1088,6 +1090,7 @@ p {
       height: 5rem;
       display: flex;
       align-items: center;
+      border-radius:  0 0 10px 10px;
     }
     .single-team .company p{
       color: white;
@@ -1104,7 +1107,7 @@ p {
         padding-bottom: 15px; */
         padding: 15px;
        } }
-    .single-team .team-content::before {
+    /* .single-team .team-content::before {
       position: absolute;
       content: '';
       width: 100%;
@@ -1120,7 +1123,7 @@ p {
       -ms-transition: all 0.3s ease-out 0s;
       -o-transition: all 0.3s ease-out 0s;
       transition: all 0.3s ease-out 0s;
-      opacity: 0; }
+      opacity: 0; } */
     .single-team .team-content .team-social {
       /* position: absolute;
       top: 0;
