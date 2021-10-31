@@ -1745,3 +1745,7 @@ p {
     top: 50%;
     transform: translateY(-50%);
 }
+
+.adding-one{
+  margin-bottom: calc(10px + 0.5rem) !important;
+}
