@@ -1258,6 +1258,7 @@ p {
   }
   #pricing .row .col-sm-5 .single-pricing{
     border: none;
+    
   }
   #pricing .row .col-sm-5 .single-partner{
     position: unset;
@@ -1271,9 +1272,14 @@ p {
     transform: initial;
   }
 } 
+#features .single-pricing{
+  width: 10rem;
+  margin: auto;
+}
 .single-pricing {
   border: 1px solid #4285f43b;
   padding: 10px 25px;
+  background-color: white;
   border-radius: 10px;
   -webkit-transition: all 0.3s ease-out 0s;
   -moz-transition: all 0.3s ease-out 0s;
