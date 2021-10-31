@@ -1121,7 +1121,7 @@ p {
     -o-transition: all 0.3s ease-out 0s;
     transition: all 0.3s ease-out 0s; }
     .single-team .team-content > p{
-      font-family: "Lora", serif;
+      font-family: "Roboto", serif;
       font-size: 16px !important;
     }
     .single-team .company {
@@ -1203,7 +1203,7 @@ p {
             .single-team .team-content .team-social .social li a:hover {
               color: #4285f4; }
     .single-team .team-content .team-name {
-      font-family: 'Lora', serif;
+      font-family: 'Roboto', serif;
       color: gray;
       font-size: 20px !important;
       font-weight: 500;
