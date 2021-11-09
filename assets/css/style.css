@@ -1954,3 +1954,8 @@ p {
 .two-speaker .speaker-sub{
   font-size: 6px !important;
 }
+.speaker-sub-topic{
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+}
