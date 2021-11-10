@@ -1837,6 +1837,8 @@ p {
   margin-right: 1rem;
   display: flex;
   flex-wrap: wrap;
+  transition-duration: 0.2s;
+
 }
 
 .new-speaker .speaker-left{
@@ -1899,6 +1901,12 @@ p {
 .speaker-wrapper{
   display: flex;
   flex-wrap: wrap;
+
+}
+
+.new-speaker:hover{
+  transform: translateY(-3px);
+  transition-duration: 0.2s;
 }
 
 .single-mentor .team-image img {
