@@ -1700,12 +1700,12 @@ p {
     color: white;
 
   }
-#footer-alter .content{
+/* #footer-alter .content{
   font-style: italic;
-}
-#footer-alter .content span{
+} */
+/* #footer-alter .content span{
   font-style: normal;
-}
+} */
 #footer-alter .col-lg-6.pt-30 p:nth-child(2){
   font-weight: 500;
 }
@@ -2017,4 +2017,9 @@ p {
 .wrapper-press{
   display: flex;
   justify-content: center;
+}
+
+.footer-underline:hover{
+  text-decoration: underline;
+  color: #ddd;
 }
