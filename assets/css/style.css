@@ -930,14 +930,14 @@ p {
       .event-tab .tab-content .event-content .single-event .event-content .text {
         color: black 
       }
-        .event-tab .tab-content .event-content .single-event .event-content .text::marker {
+        /* .event-tab .tab-content .event-content .single-event .event-content .text::marker {
           color: black ;
           font-size: 150%;
         }
         .event-tab .tab-content .event-content .single-event:hover .event-content .text::marker {
           color: white ;
           font-size: 150%;
-        }
+        } */
       .event-tab .tab-content .event-content .single-event .event-content .event-meta {
         padding-top: 10px; }
         .event-tab .tab-content .event-content .single-event .event-content .event-meta li {
@@ -2026,5 +2026,5 @@ p {
 .element{
   pointer-events: none;
   text-decoration: none;
-  color: inherit;
+  color: black;
 }
