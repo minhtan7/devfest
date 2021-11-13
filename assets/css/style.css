@@ -2023,3 +2023,8 @@ p {
   text-decoration: underline;
   color: #ddd;
 }
+.element{
+  pointer-events: none;
+  text-decoration: none;
+  color: inherit;
+}

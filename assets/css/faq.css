@@ -32,8 +32,3 @@
     #faq .block{
         margin: 0 1rem 1.5rem
     }
-.element{
-    pointer-events: none;
-    text-decoration: none;
-    color: inherit;
-}
