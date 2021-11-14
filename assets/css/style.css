@@ -1979,7 +1979,7 @@ p {
   padding: 1rem 2rem;
   border-radius: 10px;
   transition-duration: 0.2s;
-
+  margin: 1rem
 }
 .press:hover{
   transform: translateY(-10px);
@@ -2017,6 +2017,7 @@ p {
 .wrapper-press{
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .footer-underline:hover{
