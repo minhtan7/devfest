@@ -2050,3 +2050,6 @@ p {
 #press .event-content .single-event a:hover{
   color: #fbbc04
 }
+.small-text{
+  font-size: 9px;
+}
