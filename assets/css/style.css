@@ -1988,10 +1988,14 @@ p {
 .newspaper{
   color: white;
   background-color: var(--dark-blue);
+  background-image:url("../images/topography.svg");
   display: inline-block;
   padding: 0.1rem 0.8rem;
+  width: 9rem;
+  text-align: center;
   border-radius: 5px;
   font-size: 12px;
+  font-weight: 600;
   margin-bottom: 0.5rem;
 }
 .title a h4{
@@ -2028,4 +2032,21 @@ p {
   pointer-events: none;
   text-decoration: none;
   color: black;
+}
+#press .event-content{
+  /* border: 1px solid blue;
+  border-radius: 15px; */
+  padding: 2rem;
+}
+#press .event-content .single-event{
+  border: none;
+  padding: 0;
+  font-size:14px
+}
+#press .event-content .single-event a{
+  color: black;
+  font-size: 16px;
+}
+#press .event-content .single-event a:hover{
+  color: #fbbc04
 }
