@@ -2066,6 +2066,7 @@ p {
 #press .event-content .single-event a{
   color: black;
   font-size: 16px;
+  display: contents;
 }
 #press .event-content .single-event a:hover{
   color: #fbbc04
