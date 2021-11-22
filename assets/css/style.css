@@ -1961,8 +1961,11 @@ p {
   font-size: 12px;
   line-height: 1.3;
 }
-.team-name{
+.single-mentor .team-name{
   height: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .two-speaker .team-image img {
