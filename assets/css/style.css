@@ -1850,7 +1850,7 @@ p {
 }
 
 .new-speaker{
-  height: 10.6rem;
+  height: 10rem;
   width: 21rem;
   overflow: hidden;
   border-radius: 10px;
@@ -1859,6 +1859,11 @@ p {
   flex-wrap: wrap;
   transition-duration: 0.2s;
 
+}
+@media (max-width: 767px) {
+  .new-speaker{
+    height: 11.2rem;
+  }
 }
 
 .new-speaker .speaker-left{
@@ -1985,11 +1990,19 @@ p {
   margin: auto;
 }
 .two-speaker .speaker-name{
-  font-size: 8px !important;
+  font-size: 9px !important;
   margin: 7px 0;
 }
 .two-speaker .speaker-sub{
-  font-size: 6px !important;
+  font-size: 8px !important;
+}
+@media (max-width:767px) {
+  .two-speaker .speaker-sub{
+    font-size: 6px !important;
+  }
+  .two-speaker .speaker-name{
+    font-size: 7px !important;
+  }
 }
 .speaker-sub-topic{
   font-size: 11px;
