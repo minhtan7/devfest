@@ -1,0 +1,969 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>PvU</title>
+    <style>
+        /* cspell:disable-file */
+        /* webkit printing magic: print all background colors */
+        html {
+            -webkit-print-color-adjust: exact;
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        @media only screen {
+            body {
+                margin: 2em auto;
+                max-width: 900px;
+                color: rgb(55, 53, 47);
+            }
+        }
+
+        body {
+            line-height: 1.5;
+            /* white-space: pre-wrap; */
+        }
+
+        a,
+        a.visited {
+            color: inherit;
+            text-decoration: underline;
+        }
+
+        .pdf-relative-link-path {
+            font-size: 80%;
+            color: #444;
+        }
+
+        h1,
+        h2,
+        h3 {
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 0.75em;
+        }
+
+        h1 {
+            font-size: 1.875rem;
+            margin-top: 1.875rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            margin-top: 1.25rem;
+        }
+
+        .source {
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            padding: 1.5em;
+            word-break: break-all;
+        }
+
+        .callout {
+            border-radius: 3px;
+            padding: 1rem;
+        }
+
+        figure {
+            margin: 1.25em 0;
+            page-break-inside: avoid;
+        }
+
+        figcaption {
+            opacity: 0.5;
+            font-size: 85%;
+            margin-top: 0.5em;
+        }
+
+        mark {
+            background-color: transparent;
+        }
+
+        .indented {
+            padding-left: 1.5em;
+        }
+
+        hr {
+            background: transparent;
+            display: block;
+            width: 100%;
+            height: 1px;
+            visibility: visible;
+            border: none;
+            border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        @media only print {
+            img {
+                max-height: 100vh;
+                object-fit: contain;
+            }
+        }
+
+        @page {
+            margin: 1in;
+        }
+
+        .collection-content {
+            font-size: 0.875rem;
+        }
+
+        .column-list {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .column {
+            padding: 0 1em;
+        }
+
+        .column:first-child {
+            padding-left: 0;
+        }
+
+        .column:last-child {
+            padding-right: 0;
+        }
+
+        .table_of_contents-item {
+            display: block;
+            font-size: 0.875rem;
+            line-height: 1.3;
+            padding: 0.125rem;
+        }
+
+        .table_of_contents-indent-1 {
+            margin-left: 1.5rem;
+        }
+
+        .table_of_contents-indent-2 {
+            margin-left: 3rem;
+        }
+
+        .table_of_contents-indent-3 {
+            margin-left: 4.5rem;
+        }
+
+        .table_of_contents-link {
+            text-decoration: none;
+            opacity: 0.7;
+            border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid rgba(55, 53, 47, 0.09);
+            border-collapse: collapse;
+        }
+
+        table {
+            border-left: none;
+            border-right: none;
+        }
+
+        th,
+        td {
+            font-weight: normal;
+            padding: 0.25em 0.5em;
+            line-height: 1.5;
+            min-height: 1.5em;
+            text-align: left;
+        }
+
+        th {
+            color: rgba(55, 53, 47, 0.6);
+        }
+
+        ol,
+        ul {
+            margin: 0;
+            margin-block-start: 0.6em;
+            margin-block-end: 0.6em;
+        }
+
+        li>ol:first-child,
+        li>ul:first-child {
+            margin-block-start: 0.6em;
+        }
+
+        ul>li {
+            list-style: disc;
+        }
+
+        ul.to-do-list {
+            text-indent: -1.7em;
+        }
+
+        ul.to-do-list>li {
+            list-style: none;
+        }
+
+        .to-do-children-checked {
+            text-decoration: line-through;
+            opacity: 0.375;
+        }
+
+        ul.toggle>li {
+            list-style: none;
+        }
+
+        ul {
+            padding-inline-start: 1.7em;
+        }
+
+        ul>li {
+            padding-left: 0.1em;
+        }
+
+        ol {
+            padding-inline-start: 1.6em;
+        }
+
+        ol>li {
+            padding-left: 0.2em;
+        }
+
+        .mono ol {
+            padding-inline-start: 2em;
+        }
+
+        .mono ol>li {
+            text-indent: -0.4em;
+        }
+
+        .toggle {
+            padding-inline-start: 0em;
+            list-style-type: none;
+        }
+
+        /* Indent toggle children */
+        .toggle>li>details {
+            padding-left: 1.7em;
+        }
+
+        .toggle>li>details>summary {
+            margin-left: -1.1em;
+        }
+
+        .selected-value {
+            display: inline-block;
+            padding: 0 0.5em;
+            background: rgba(206, 205, 202, 0.5);
+            border-radius: 3px;
+            margin-right: 0.5em;
+            margin-top: 0.3em;
+            margin-bottom: 0.3em;
+            white-space: nowrap;
+        }
+
+        .collection-title {
+            display: inline-block;
+            margin-right: 1em;
+        }
+
+        .simple-table {
+            margin-top: 1em;
+            font-size: 0.875rem;
+        }
+
+        .simple-table-header {
+            background: rgb(247, 246, 243);
+            color: black;
+            font-weight: 500;
+        }
+
+        time {
+            opacity: 0.5;
+        }
+
+        .icon {
+            display: inline-block;
+            max-width: 1.2em;
+            max-height: 1.2em;
+            text-decoration: none;
+            vertical-align: text-bottom;
+            margin-right: 0.5em;
+        }
+
+        img.icon {
+            border-radius: 3px;
+        }
+
+        .user-icon {
+            width: 1.5em;
+            height: 1.5em;
+            border-radius: 100%;
+            margin-right: 0.5rem;
+        }
+
+        .user-icon-inner {
+            font-size: 0.8em;
+        }
+
+        .text-icon {
+            border: 1px solid #000;
+            text-align: center;
+        }
+
+        .page-cover-image {
+            display: block;
+            object-fit: cover;
+            width: 100%;
+            height: 30vh;
+        }
+
+        .page-header-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-header-icon-with-cover {
+            margin-top: -0.72em;
+            margin-left: 0.07em;
+        }
+
+        .page-header-icon img {
+            border-radius: 3px;
+        }
+
+        .link-to-page {
+            margin: 1em 0;
+            padding: 0;
+            border: none;
+            font-weight: 500;
+        }
+
+        p>.user {
+            opacity: 0.5;
+        }
+
+        td>.user,
+        td>time {
+            white-space: nowrap;
+        }
+
+        input[type="checkbox"] {
+            transform: scale(1.5);
+            margin-right: 0.6em;
+            vertical-align: middle;
+        }
+
+        p {
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+        }
+
+        .image {
+            border: none;
+            margin: 1.5em 0;
+            padding: 0;
+            border-radius: 0;
+            text-align: center;
+        }
+
+        .code,
+        code {
+            background: rgba(135, 131, 120, 0.15);
+            border-radius: 3px;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 85%;
+            tab-size: 2;
+        }
+
+        code {
+            color: #eb5757;
+        }
+
+        .code {
+            padding: 1.5em 1em;
+        }
+
+        .code-wrap {
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        .code>code {
+            background: none;
+            padding: 0;
+            font-size: 100%;
+            color: inherit;
+        }
+
+        blockquote {
+            font-size: 1.25em;
+            margin: 1em 0;
+            padding-left: 1em;
+            border-left: 3px solid rgb(55, 53, 47);
+        }
+
+        .bookmark {
+            text-decoration: none;
+            max-height: 8em;
+            padding: 0;
+            display: flex;
+            width: 100%;
+            align-items: stretch;
+        }
+
+        .bookmark-title {
+            font-size: 0.85em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            height: 1.75em;
+            white-space: nowrap;
+        }
+
+        .bookmark-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bookmark-info {
+            flex: 4 1 180px;
+            padding: 12px 14px 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .bookmark-image {
+            width: 33%;
+            flex: 1 1 180px;
+            display: block;
+            position: relative;
+            object-fit: cover;
+            border-radius: 1px;
+        }
+
+        .bookmark-description {
+            color: rgba(55, 53, 47, 0.6);
+            font-size: 0.75em;
+            overflow: hidden;
+            max-height: 4.5em;
+            word-break: break-word;
+        }
+
+        .bookmark-href {
+            font-size: 0.75em;
+            margin-top: 0.25em;
+        }
+
+        .sans {
+            font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+        }
+
+        .code {
+            font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+        }
+
+        .serif {
+            font-family: Lyon-Text, Georgia, ui-serif, serif;
+        }
+
+        .mono {
+            font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+        }
+
+        .pdf .sans {
+            font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP';
+        }
+
+        .pdf:lang(zh-CN) .sans {
+            font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC';
+        }
+
+        .pdf:lang(zh-TW) .sans {
+            font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC';
+        }
+
+        .pdf:lang(ko-KR) .sans {
+            font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR';
+        }
+
+        .pdf .code {
+            font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+        }
+
+        .pdf:lang(zh-CN) .code {
+            font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+        }
+
+        .pdf:lang(zh-TW) .code {
+            font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+        }
+
+        .pdf:lang(ko-KR) .code {
+            font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+        }
+
+        .pdf .serif {
+            font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP';
+        }
+
+        .pdf:lang(zh-CN) .serif {
+            font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC';
+        }
+
+        .pdf:lang(zh-TW) .serif {
+            font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC';
+        }
+
+        .pdf:lang(ko-KR) .serif {
+            font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR';
+        }
+
+        .pdf .mono {
+            font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+        }
+
+        .pdf:lang(zh-CN) .mono {
+            font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+        }
+
+        .pdf:lang(zh-TW) .mono {
+            font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+        }
+
+        .pdf:lang(ko-KR) .mono {
+            font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+        }
+
+        .highlight-default {
+            color: rgba(55, 53, 47, 1);
+        }
+
+        .highlight-gray {
+            color: rgba(120, 119, 116, 1);
+            fill: rgba(145, 145, 142, 1);
+        }
+
+        .highlight-brown {
+            color: rgba(159, 107, 83, 1);
+            fill: rgba(187, 132, 108, 1);
+        }
+
+        .highlight-orange {
+            color: rgba(217, 115, 13, 1);
+            fill: rgba(215, 129, 58, 1);
+        }
+
+        .highlight-yellow {
+            color: rgba(203, 145, 47, 1);
+            fill: rgba(203, 148, 51, 1);
+        }
+
+        .highlight-teal {
+            color: rgba(68, 131, 97, 1);
+            fill: rgba(108, 155, 125, 1);
+        }
+
+        .highlight-blue {
+            color: rgba(51, 126, 169, 1);
+            fill: rgba(91, 151, 189, 1);
+        }
+
+        .highlight-purple {
+            color: rgba(144, 101, 176, 1);
+            fill: rgba(167, 130, 195, 1);
+        }
+
+        .highlight-pink {
+            color: rgba(193, 76, 138, 1);
+            fill: rgba(205, 116, 159, 1);
+        }
+
+        .highlight-red {
+            color: rgba(212, 76, 71, 1);
+            fill: rgba(225, 111, 100, 1);
+        }
+
+        .highlight-gray_background {
+            background: rgba(241, 241, 239, 1);
+        }
+
+        .highlight-brown_background {
+            background: rgba(244, 238, 238, 1);
+        }
+
+        .highlight-orange_background {
+            background: rgba(251, 236, 221, 1);
+        }
+
+        .highlight-yellow_background {
+            background: rgba(251, 243, 219, 1);
+        }
+
+        .highlight-teal_background {
+            background: rgba(237, 243, 236, 1);
+        }
+
+        .highlight-blue_background {
+            background: rgba(231, 243, 248, 1);
+        }
+
+        .highlight-purple_background {
+            background: rgba(244, 240, 247, 0.8);
+        }
+
+        .highlight-pink_background {
+            background: rgba(249, 238, 243, 0.8);
+        }
+
+        .highlight-red_background {
+            background: rgba(253, 235, 236, 1);
+        }
+
+        .block-color-default {
+            color: inherit;
+            fill: inherit;
+        }
+
+        .block-color-gray {
+            color: rgba(120, 119, 116, 1);
+            fill: rgba(145, 145, 142, 1);
+        }
+
+        .block-color-brown {
+            color: rgba(159, 107, 83, 1);
+            fill: rgba(187, 132, 108, 1);
+        }
+
+        .block-color-orange {
+            color: rgba(217, 115, 13, 1);
+            fill: rgba(215, 129, 58, 1);
+        }
+
+        .block-color-yellow {
+            color: rgba(203, 145, 47, 1);
+            fill: rgba(203, 148, 51, 1);
+        }
+
+        .block-color-teal {
+            color: rgba(68, 131, 97, 1);
+            fill: rgba(108, 155, 125, 1);
+        }
+
+        .block-color-blue {
+            color: rgba(51, 126, 169, 1);
+            fill: rgba(91, 151, 189, 1);
+        }
+
+        .block-color-purple {
+            color: rgba(144, 101, 176, 1);
+            fill: rgba(167, 130, 195, 1);
+        }
+
+        .block-color-pink {
+            color: rgba(193, 76, 138, 1);
+            fill: rgba(205, 116, 159, 1);
+        }
+
+        .block-color-red {
+            color: rgba(212, 76, 71, 1);
+            fill: rgba(225, 111, 100, 1);
+        }
+
+        .block-color-gray_background {
+            background: rgba(241, 241, 239, 1);
+        }
+
+        .block-color-brown_background {
+            background: rgba(244, 238, 238, 1);
+        }
+
+        .block-color-orange_background {
+            background: rgba(251, 236, 221, 1);
+        }
+
+        .block-color-yellow_background {
+            background: rgba(251, 243, 219, 1);
+        }
+
+        .block-color-teal_background {
+            background: rgba(237, 243, 236, 1);
+        }
+
+        .block-color-blue_background {
+            background: rgba(231, 243, 248, 1);
+        }
+
+        .block-color-purple_background {
+            background: rgba(244, 240, 247, 0.8);
+        }
+
+        .block-color-pink_background {
+            background: rgba(249, 238, 243, 0.8);
+        }
+
+        .block-color-red_background {
+            background: rgba(253, 235, 236, 1);
+        }
+
+        .select-value-color-pink {
+            background-color: rgba(245, 224, 233, 1);
+        }
+
+        .select-value-color-purple {
+            background-color: rgba(232, 222, 238, 1);
+        }
+
+        .select-value-color-green {
+            background-color: rgba(219, 237, 219, 1);
+        }
+
+        .select-value-color-gray {
+            background-color: rgba(227, 226, 224, 1);
+        }
+
+        .select-value-color-orange {
+            background-color: rgba(250, 222, 201, 1);
+        }
+
+        .select-value-color-brown {
+            background-color: rgba(238, 224, 218, 1);
+        }
+
+        .select-value-color-red {
+            background-color: rgba(255, 226, 221, 1);
+        }
+
+        .select-value-color-yellow {
+            background-color: rgba(253, 236, 200, 1);
+        }
+
+        .select-value-color-blue {
+            background-color: rgba(211, 229, 239, 1);
+        }
+
+        .checkbox {
+            display: inline-flex;
+            vertical-align: text-bottom;
+            width: 16;
+            height: 16;
+            background-size: 16px;
+            margin-left: 2px;
+            margin-right: 5px;
+        }
+
+        .checkbox-on {
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+        }
+
+        .checkbox-off {
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+        }
+    </style>
+</head>
+
+<body>
+    <article id="f1a3aa4e-3ff7-4637-8d2b-d75576390d92" class="page sans">
+        <header>
+            <div class="page-header-icon undefined"><span class="icon">✅</span></div>
+            <h1 class="page-title">PvU</h1>
+            <table class="properties">
+                <tbody>
+                    <tr class="property-row property-row-created_time">
+                        <th><span class="icon property-icon"><svg viewBox="0 0 14 14"
+                                    style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden"
+                                    class="typesCreatedAt">
+                                    <path
+                                        d="M6.98643729,14.0000972 C5.19579566,14.0000972 3.40419152,13.3106896 2.04245843,11.9323606 C-0.681017475,9.21200555 -0.680780251,4.76029539 2.04293482,2.04012507 C4.76664406,-0.68004331 9.22427509,-0.68004331 11.9480135,2.04013479 C13.272481,3.36277455 14,5.1330091 14,6.99552762 C14,8.87640182 13.2721894,10.6285043 11.9480135,11.9509302 C10.5679344,13.3105924 8.77756503,14.0000972 6.98643729,14.0000972 Z M10.2705296,7.00913883 L10.2705296,8.46099754 L10.2705296,8.65543362 L10.076181,8.65543362 L8.6543739,8.65543362 L5.72059514,8.65543362 L5.52619796,8.65543362 L5.52619796,8.46099754 L5.52619796,5.52541044 L5.52619796,3.37946773 L5.52619796,3.18502193 L5.72059514,3.18502193 L7.17253164,3.18502193 L7.36692883,3.18502193 L7.36692883,3.37946773 L7.36692883,6.81467358 L10.076181,6.81467358 L10.2705296,6.81467358 L10.2705296,7.00913883 Z M12.1601539,6.99552762 C12.1601539,5.61697497 11.6190112,4.32597154 10.6393933,3.34769528 C8.63253764,1.34336744 5.35197452,1.34061603 3.34153136,3.33944106 C3.33868273,3.34219247 3.33607716,3.34494388 3.33322852,3.34769528 C1.32397148,5.35459953 1.32372842,8.63641682 3.33322852,10.6433794 C5.34295224,12.6504489 8.62968901,12.6504489 10.6393933,10.6433794 C11.6190112,9.66506426 12.1601539,8.37408027 12.1601539,6.99552762 Z">
+                                    </path>
+                                </svg></span>Created</th>
+                        <td><time>@November 13, 2021 6:41 PM</time></td>
+                    </tr>
+                    <tr class="property-row property-row-multi_select">
+                        <th><span class="icon property-icon"><svg viewBox="0 0 14 14"
+                                    style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden"
+                                    class="typesMultipleSelect">
+                                    <path
+                                        d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z">
+                                    </path>
+                                </svg></span>Tags</th>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </header>
+        <div class="page-body">
+            <h1 id="ad0baf8b-be15-44ec-b402-6ab30aa89bb5" class="">Cùng gặp gỡ Plant vs Undead - Nhà Tài Trợ Kim Cương
+                của GDG DevFest HCMC 2021</h1>
+            <h2 id="26255de0-461e-4c10-acb1-25fe93ab9d4f" class="">Những nhà sáng lập của Plant vs Undead, họ là ai?
+            </h2>
+            <p id="cc72993d-86b9-4f9c-8daa-4fc670747f67" class="">Đội ngũ của chúng tôi bao gồm các nhà đầu tư, nhà
+                thiết kế sản phẩm và nhà phát triển ứng dụng dành cho thiết bị di động với nhiều năm kinh nghiệm. Chúng
+                tôi là một đội nhóm gắn kết với nhiều chuyên gia tận tâm đến từ nhiều lĩnh vực khác nhau với các kỹ năng
+                bổ trợ cho nhau. </p>
+            <p id="28d453b7-425a-4b63-a8a4-3dff9a19e5ad" class="">Ngoài ra, chúng tôi còn là những người đam mê lĩnh vực
+                trò chơi điện tử và mong muốn tạo ra các trải nghiệm mới mẻ trong lối chơi cũng như áp dụng các công
+                nghệ mới trên thế giới vào lĩnh vực trò chơi điện tử. </p>
+            <p id="5a02a3e9-f293-4a30-860c-bf2b3864f61b" class=""><strong>Không ngừng học hỏi và phát triển, chúng tôi
+                    lựa chọn thể loại trò chơi NFT với tâm huyết tạo ra một cuộc cách mạng về công nghệ cũng như trải
+                    nghiệm người dùng.</strong></p>
+            <p id="531cecc7-1c0f-409b-b966-5752d4e340ff" class="">
+            </p>
+            <figure id="ff582222-8b9a-45f2-8cc9-49694394c7cb" class="image"><a
+                    href="PvU%20ff5822228b9a45f28cc949694394c7cb/1.png"><img style="width:1920px"
+                        src="PvU%20ff5822228b9a45f28cc949694394c7cb/1.png" /></a></figure>
+            <h2 id="085e162c-5bdb-4c88-aed4-3e6d9aa7e7fe" class="">Khám phá khu vườn Plant vs Undead</h2>
+            <p id="413389db-d2a1-425e-b0e3-8b60d795334e" class="">Plant vs Undead (PVU) là tựa game được xây dựng trên
+                nền tảng công nghệ blockchain (công nghệ chuỗi -  khối), vận hành trên giao thức Binance Smart Chain
+                (BSC) và Factory Chain (FAC). </p>
+            <p id="669f04fd-8ad0-4933-af01-2b7854873e34" class="">Công nghệ blockchain cho phép các vật phẩm hoặc đối
+                tượng trong game đồng thời sẽ là các NFT (Non-Fungible Token), một đơn vị dữ liệu được lưu trữ trên
+                blockchain có tính chất độc nhất, có thể được sở hữu, có giá trị và có thể giao dịch như một loại tài
+                sản. Nhờ vậy,  người chơi của PVU có thể <strong>“vừa chơi vừa tạo ra thu nhập”</strong> (Play-to-Earn)
+                bằng cách tạo ra các NFT trong quá trình chơi và giao dịch với những người dùng khác trên nền tảng tích
+                hợp trong game. </p>
+            <p id="41a301e8-9b48-42eb-96c5-418d8e68a57f" class="">Với sự hưởng ứng mạnh mẽ của cộng đồng Việt Nam và
+                quốc tế, lượng người dùng của PVU đã và đang tăng trưởng một cách đáng kinh ngạc mỗi ngày với con số đã
+                lên đến hàng triệu tính đến thời điểm hiện tại.</p>
+            <p id="ee4246ac-7c3a-4bdf-bca6-1727970cf9db" class=""><em>Tuyên bố </em><em>miễn trừ</em><em> trách nhiệm
+                    (Disclaimer): Những nội dung sau đây không </em><em>đưa ra bất kỳ </em><em>sự chứng thực hoặc phê
+                    duyệt </em><em>nào đối </em><em>bất kỳ sản phẩm, dịch vụ nào của </em><em>bất kỳ </em><em>dự án, tổ
+                    chức hoặc cá nhân</em><em> nào</em><em>.</em></p>
+            <figure id="182c3497-e635-4967-98c3-85b0b7b59ad1" class="image"><a
+                    href="PvU%20ff5822228b9a45f28cc949694394c7cb/2.png"><img style="width:1468px"
+                        src="PvU%20ff5822228b9a45f28cc949694394c7cb/2.png" /></a></figure>
+            <p id="24367f8d-dc6c-4eb7-a076-bc67da387e1f" class=""><strong>Plant vs Undead (PVU) – Trò chơi thuộc thể
+                    loại mô phỏng trang trại và phòng thủ tháp (tower defense) đang thịnh hành</strong></p>
+            <p id="177aea49-f1cc-4ad3-97f5-cf2bb55c12f9" class="">Plant vs Undead (PVU) gồm hai chế độ chơi: Phòng thủ
+                tháp và mô phỏng trang trại. Người chơi có thể thi đấu với nhau (PvP) bằng cách sắp xếp cho các nhân vật
+                Cây (“<strong>Plants</strong>”) của mình chiến đấu chống lại các đợt tấn công của quái vật, hoặc, đối
+                với những ai yêu thích sự yên bình, thư giãn, chế độ trồng trọt của trò chơi sẽ đem đến những trải
+                nghiệm thú vị cũng như đem lại thu nhập cho người chơi. </p>
+            <p id="dd72abc6-17ea-4bc7-95fd-a8b763077218" class="">Với ba tính năng cốt lõi, PVU đã, đang và hứa hẹn sẽ
+                tiếp tục là tựa game có lối chơi đa dạng và đem lại các cơ hội tạo thêm thu nhập rộng mở dành cho mọi
+                đối tượng người chơi, từ những người chơi chú trọng đến khía cạnh đầu tư của PVU và sẵn sàng bỏ vốn đầu
+                tư vào PVU, cũng như những người chơi chủ yếu quan tâm đến khía cạnh giải trí của PVU:</p>
+            <ol type="1" id="bf99da7b-1b5a-4f52-9e8e-7c7b47b1e111" class="numbered-list" start="1">
+                <li><strong>Miễn phí tham gia (Free-to-Play): </strong>Trong chế độ PvP, PVU mang đến tính năng “chơi
+                    không thu phí” cho tất cả người dùng. Bất kỳ ai cũng có thể tham gia mà không cần bỏ ra bất kỳ số
+                    vốn đầu tư ban đầu nào. Những người chơi mới sẽ được trang bị sẵn những nhân vật Cây miễn phí (được
+                    gọi là Baby Plants) khi tham gia trò chơi và dễ dàng trải nghiệm hệ sinh thái của chế độ PvP ngay
+                    lập tức.</li>
+            </ol>
+            <ol type="1" id="5bfe6888-619e-483e-b1f3-b273fc4cbfae" class="numbered-list" start="2">
+                <li><strong>Chơi game kết hợp tạo ra thu nhập (Play-to-Earn):</strong> Tính năng chơi kết hợp tạo ra thu
+                    nhập được tích hợp trong mọi chế độ chơi của PVU. Với tính năng này, ngoài những trải nghiệm về chơi
+                    game thuần túy, người chơi có thể nhận được thu nhập từ các vật phẩm NFT có giá trị cao trong game.
+                </li>
+            </ol>
+            <ol type="1" id="a9cb9892-5c22-414b-ad79-a08bea06a4e4" class="numbered-list" start="3">
+                <li><strong>Thi đấu (Competitive Gaming):</strong> Chế độ chơi chính trong PVU là các cuộc thi đấu 1vs1
+                    giữa các người chơi. Một số cơ chế trong trò chơi đảm bảo PVU đạt tiêu chuẩn thể thao điện tử với
+                    các nâng cấp cân bằng hệ thống và chống gian lận trong quá trình thực hiện.</li>
+            </ol>
+            <p id="a1599559-6acf-4d6f-b037-72429bb4f075" class="">Các tính năng trên được vận hành một cách đồng bộ để
+                tạo ra những trải nghiệm thú vị cho người chơi và những người tham gia hệ sinh thái của PVU. Ngoài ra,
+                cơ chế vừa chơi vừa tạo ra thu nhập do nền tảng blockchain mang lại đang ngày càng có sức ảnh hưởng:</p>
+            <ol type="1" id="500dce1a-9080-4a7b-8ab2-3567ed3d2f7f" class="numbered-list" start="1">
+                <li>Xã hội đang dần thay đổi quan niệm chơi game chỉ là một thú vui. Với tính năng vừa chơi vừa tạo ra
+                    thu nhập, các trò chơi có thể trở thành một nguồn tài chính quan trọng cho người chơi.</li>
+            </ol>
+            <ol type="1" id="4cb93180-ac32-4690-a802-eecbe8b1ff26" class="numbered-list" start="2">
+                <li>PVU áp dụng phương pháp này bằng cách tạo ra một nền kinh tế trong trò chơi và cấp cho người chơi
+                    các mã thông báo độc quyền của nền tảng PVU. Người chơi có thể sử dụng mã thông báo PVU như một loại
+                    tiền tệ để giao dịch trao đổi các tài sản trong trò chơi như Cây và hạt giống hoặc các loại tiền kỹ
+                    thuật số khác.</li>
+            </ol>
+            <figure id="611fa5e3-c209-45f4-a3bf-e8bc2cfce9c9" class="image"><a
+                    href="PvU%20ff5822228b9a45f28cc949694394c7cb/3.png"><img style="width:2668px"
+                        src="PvU%20ff5822228b9a45f28cc949694394c7cb/3.png" /></a></figure>
+            <h2 id="e9c989f3-efd7-4d59-bfd4-f72527e75e59" class=""><strong>Nguồn cảm hứng đằng sau dự án Plant vs Undead
+                    (PVU) là gì?</strong></h2>
+            <p id="88fd6a55-334a-40e8-b84c-823ace8958aa" class="">Cảm hứng cho PVU bắt đầu từ những chi tiết nhỏ nhất,
+                những thể loại trò chơi truyền thống với lối chơi và cách chơi rất quen thuộc không mấy biến đổi qua
+                nhiều thập kỷ mà vẫn luôn có sức thu hút. </p>
+            <p id="8ca6572d-acad-45e2-8639-4f2885985d20" class="">Bên cạnh đó, sự tiến bộ về công nghệ đã tạo cảm hứng
+                trong chúng tôi về việc xây dựng một trò chơi đơn giản, gần gũi nhưng có thể giúp cho người chơi kiếm
+                thêm thu nhập. Chúng tôi đã bắt đầu xem xét các khái niệm về công nghệ Blockchain, NFT và DeFi và phát
+                hiện ra rằng nếu cẩn thận kết hợp những khái niệm này với trò chơi, chúng tôi có thể xây dựng một trò
+                chơi thú vị với cơ cấu kinh tế mạnh mẽ, khuyến khích người chơi thoải mái thưởng thức mà còn tạo ra giá
+                trị thực. </p>
+            <p id="f489ac9c-196e-4cdd-838b-a5dafea4665e" class="">Chúng tôi đã biến nguồn cảm hứng này trở thành thực
+                tế, từ đó dẫn đến việc cái tên Plant vs Undead (PVU) thịnh hành trong thị trường Game Blockchain như
+                ngày nay, một trò chơi vui nhộn, gần gũi và đem lại cho người dùng đã dành thời gian chơi những giá trị
+                tài chính thực.</p>
+            <p id="c5156324-2ea6-4ddf-9c7e-a67c1facb598" class=""><strong>Tầm nhìn</strong> của chúng tôi là mở ra một
+                kỷ nguyên mới về việc tạo thu nhập thụ động từ các công cụ tài chính điện tử thông qua trò chơi. Chúng
+                tôi đánh cược các cơ chế đầu tư vào tiền mã hóa và nâng cao trải nghiệm thông qua PVU, mang lại luồng
+                gió mới cho ngành công nghiệp trò chơi NFT.</p>
+            <figure id="1ee4c47b-0b14-4baf-804f-94b4d43e1490" class="image"><a
+                    href="PvU%20ff5822228b9a45f28cc949694394c7cb/4.png"><img style="width:2668px"
+                        src="PvU%20ff5822228b9a45f28cc949694394c7cb/4.png" /></a></figure>
+            <p id="0da1769e-8187-4d97-a5c3-e8ef345a51a0" class=""><strong>Nhiệm vụ của chúng tôi:</strong></p>
+            <ul id="b892adf0-2a41-4998-af22-dcec7a340f06" class="bulleted-list">
+                <li style="list-style-type:disc">Cung cấp cho người chơi cơ hội kiếm thêm thu nhập trong thời gian chơi
+                    hoặc tích lũy tài sản trong trò chơi bằng cách mang đến một cơ chế phần thưởng cho họ.</li>
+            </ul>
+            <ul id="8109e5af-aaf7-475d-af83-7ef2b6220c19" class="bulleted-list">
+                <li style="list-style-type:disc">Bảo mật và an ninh: Mọi hoạt động PVU bao gồm chơi game, giao dịch,
+                    v.v. được điều chỉnh theo thời gian thực để nâng cao trải nghiệm của người dùng và thực thi một quy
+                    trình hoàn toàn an toàn và minh bạch. Để minh chứng cho điều đó, chúng tôi triển khai nhiều công cụ
+                    khác nhau để bảo vệ chống lại những kẻ gian lận hoặc tin tặc trên nền tảng của mình, bao gồm cả một
+                    hệ thống chống gian lận được cân bằng và ổn định. Khi nói đến bảo mật, chúng tôi thực hiện các biện
+                    pháp khác nhau để bảo vệ tài sản của người chơi và hạn chế hoạt động của những kẻ xấu. Các biện pháp
+                    này bao gồm:</li>
+            </ul>
+            <ol type="1" id="ba5132c6-63c1-4be1-8441-b29aa9fcb5bf" class="numbered-list" start="1">
+                <li>Kiểm tra các điều chỉnh về thời gian với nhà điều hành mạng.</li>
+            </ol>
+            <ol type="1" id="9ddce0f4-f44f-4f65-976c-75d938048bb7" class="numbered-list" start="2">
+                <li>Quyền truy cập tải xuống trò chơi chính thức bị hạn chế ở trang chủ.</li>
+            </ol>
+            <ol type="1" id="904f7223-bea2-4e79-bff5-a4d50e4ddc02" class="numbered-list" start="3">
+                <li>Hạn chế việc sử dụng nhiều tài khoản cùng lúc.</li>
+            </ol>
+            <ol type="1" id="1a7bb0eb-0dfa-49aa-acb2-a6bea6fda10d" class="numbered-list" start="4">
+                <li>Xử lý triệt để các thành phần sử dụng phần mềm thứ 3 can thiệp vào trò chơi.</li>
+            </ol>
+            <ol type="1" id="1978410c-7518-45f0-81a9-df1c5db325cf" class="numbered-list" start="5">
+                <li>Cấm chuyển đổi tài khoản khi đang canh tác trong chế độ nông trại.</li>
+            </ol>
+            <figure id="df4fec2d-7cc0-4232-afc1-3c43e85f08d9" class="image"><a
+                    href="PvU%20ff5822228b9a45f28cc949694394c7cb/5.jpg"><img style="width:1920px"
+                        src="PvU%20ff5822228b9a45f28cc949694394c7cb/5.jpg" /></a></figure>
+            <p id="ad1857cb-92be-4cd3-b90b-169b9533ccd6" class="">Để tìm hiểu thêm về Plant vs Undead, bạn có thể truy
+                cập: <a href="https://plantvsundead.com/">https://plantvsundead.com/</a></p>
+            <p id="fdf0076d-d1b2-4c3a-a562-4b1cae4803cc" class="">Vào ngày 11/12/2021, hãy cùng tham dự GDG DevFest HCMC
+                2021 và gặp gỡ anh Daniel Lê, Technical Lead của Plant vs Undead và cùng tìm hiểu cách mà PvU giải quyết
+                bài toán 1 triệu người chơi trong cùng 1 thời điểm (CCU) trong NFT game nhé!</p>
+            <p id="d0578ffe-5b72-48e8-b045-4b62323d6025" class="">
+            </p>
+        </div>
+    </article>
+</body>
+
+</html>
